@@ -17,6 +17,11 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: configmap-api
+            - secretRef:
+                name: secret-postgres
           resources:
             requests:
               memory: "500Mi"

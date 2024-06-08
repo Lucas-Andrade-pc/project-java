@@ -3,6 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - USERNAME=postgres
+      - PASSWORD=Postgres2024!
+      - HOST=postgres
+      - DATABASE=project
     ports:
       - 8080:8080
     depends_on:

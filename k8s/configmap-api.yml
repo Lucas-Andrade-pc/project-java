@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-api
+  namespace: api
+data:
+  DATABASE: project
+  USERNAME: postgres
+  HOST: svc-postgres

@@ -1,8 +1,8 @@
 FROM openjdk:22-bullseye  AS DOWNLOAD_STAGE
 
-WORKDIR project
+WORKDIR /project
 RUN apt-get update && apt-get install -y maven
-COPY pom.xml .
+COPY pom.xml /project
 RUN mvn dependency:go-offline
 
 FROM download_stage as BUILD
@@ -11,7 +11,7 @@ RUN mvn clean install -Dmaven.test.skip=true
 
 FROM openjdk:22-bullseye
 
-WORKDIR app
+WORKDIR /app
 RUN apt-get update && apt-get install -y maven
 
 COPY --from=build /project/target/api-0.0.1-SNAPSHOT.jar /app/api-0.0.1-SNAPSHOT.jar
