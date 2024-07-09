@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: api:latest
-          imagePullPolicy: Never
+          image: api:{{TAG}}
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:
