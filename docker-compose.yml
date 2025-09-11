@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - USERNAME=postgres
-      - PASSWORD=Postgres2024!
+      - POSTGRES_PASSWORD=Postgres2024!
       - HOST=postgres
       - DATABASE=project
     ports:
