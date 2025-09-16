@@ -1,8 +1,6 @@
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: project-java:__TAG__
     environment:
       - USERNAME=postgres
       - POSTGRES_PASSWORD=Postgres2024!
